@@ -1,3 +1,11 @@
+/**
+ * Referências:
+ * 
+ * https://medium.com/@guillaume.viguierjust/handling-money-in-your-code-debb1e26e58c
+ * 
+ * https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString
+ * 
+ */
 const formatOptions = {
   locale: 'en-US',
   style: 'currency',
@@ -25,10 +33,20 @@ console.log('inputValue ==> ', inputValue)
 console.log('persistedValue ==> ', persistedValue)
 console.log('outputValue ==> ', formattedValue)
 
+/**
+ * 
+ * @param number 
+ * @returns 
+ */
 function convertFloatToInteger(number) {
   return number * factors[decimals]
 }
 
+/**
+ * 
+ * @param number 
+ * @returns 
+ */
 function convertIntegerToFloat(number) {
   return number / factors[decimals]
 }
