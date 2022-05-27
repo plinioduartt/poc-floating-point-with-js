@@ -6,12 +6,7 @@
  * https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString
  * 
  */
-const formatOptions = {
-  locale: 'en-US',
-  style: 'currency',
-  currency: 'BRL'
-}
-const factors = {
+ const factors = {
   0: 1,
   1: 10,
   2: 100,
@@ -20,6 +15,14 @@ const factors = {
 }
 const decimals = 4
 
+const formatOptions = {
+  locale: 'pt-br',
+  style: 'currency',
+  currency: 'BRL',
+  minimumFractionDigits: decimals,
+  maximumFractionDigits: decimals
+}
+
 const inputValue = 1000000.256
 const persistedValue = convertFloatToInteger(inputValue)
 
@@ -27,6 +30,8 @@ const outputValue = convertIntegerToFloat(persistedValue)
 const formattedValue = Number(outputValue).toLocaleString(formatOptions.locale, {
   style: formatOptions.style,
   currency: formatOptions.currency,
+  minimumFractionDigits: formatOptions.minimumFractionDigits,
+  maximumFractionDigits: formatOptions.maximumFractionDigits
 })
 
 console.log('inputValue ==> ', inputValue)
